@@ -1,2 +1,2 @@
-# Hayley
-A LifeHack Chatbot
+# Haley
+A 'LifeHack' Chatbot
