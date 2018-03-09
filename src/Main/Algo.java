@@ -4,7 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Algo {
-
+    private TextArea ta_convo;
+    private JLabel lbl_screen;
 
     public void reply(String say){
 

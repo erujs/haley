@@ -2,12 +2,14 @@ package Main;
 
 import java.security.AlgorithmParameterGenerator;
 
+/**
+ * Created by Eru on 3/19/2016.
+ */
 public class Main {
-    /**
-     * Launch the application.
-     */
+    private static Interface ui;
+
     public static void main(String[] args) {
-        Interface newObj = new Interface();
-        newObj.initialize();
+        ui = new Interface();
+        ui.initialize();
     }
 }

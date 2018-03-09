@@ -11,6 +11,7 @@ public class Interface {
     public JTextField tf_response;
     private JLabel lbl_screen;
     private TextArea ta_convo;
+    private Algo r;
 
     public void initialize() {
         frmHalley = new JFrame();
@@ -28,13 +29,10 @@ public class Interface {
 
                     String response = tf_response.getText();
 
-
                     tf_response.setText("");
                     ta_convo.append("You: "+response+"\n");
                     Algo reply = new Algo();
-                    reply.Algo();
-                    r(response);
-
+                    r=new Algo();
                 }
             }
 
