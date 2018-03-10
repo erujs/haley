@@ -15,6 +15,7 @@ public class Algo extends Interface{
         haley = haley.toLowerCase();
 
         if(haley.contains("tshirt")|| haley.contains("shirt")) {
+//            System.out.print("Haley");
             ta_convo.append("Haley: A lifehack for you ;)\n");
             ImageIcon img1 = new ImageIcon(Main.class.getResource("/pics/examplePic.jpg"));
             lbl_screen.setIcon(img1);

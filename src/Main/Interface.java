@@ -65,19 +65,4 @@ public class Interface {
             }
         });
     }
-//    public void reply(String statement) {
-//        String haley = statement;
-//        haley = haley.toLowerCase();
-//
-//        if(haley.contains("tshirt")|| haley.contains("shirt")) {
-//            ta_convo.append("Haley: A lifehack for you ;)\n");
-//            ImageIcon img1 = new ImageIcon(Main.class.getResource("/pics/examplePic.jpg"));
-//            lbl_screen.setIcon(img1);
-//        }
-//        else{
-//            ta_convo.append("Haley: I dont know what your talking about\n");
-//            ImageIcon img1 = new ImageIcon(Main.class.getResource("/pics/blank.png"));
-//            lbl_screen.setIcon(img1);
-//        }
-//    }
 }
