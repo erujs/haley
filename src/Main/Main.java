@@ -6,18 +6,18 @@ package Main;
 public class Main {
     private static Interface ui;
 
-//    public update(){
-//
-//    }
-//
-//    private void render(){
-//
-//    }
+    private enum STATE{
+        MENU,
+        GAME
+    };
 
     public static void main(String[] args) {
+//        private STATE State = STATE.MENU;
 //        update();
 //        render();
-        ui = new Interface();
-        ui.init();
+//        if (State == STATE.GAME) {
+            ui = new Interface();
+            ui.init();
+//        }
     }
 }
