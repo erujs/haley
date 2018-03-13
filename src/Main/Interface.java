@@ -10,18 +10,35 @@ import java.awt.event.KeyEvent;
  */
 public class Interface {
 
-    public JFrame frmHaley;
     public JTextField tf_response;
     public JLabel lbl_screen;
     public TextArea ta_convo;
     private static Algo r;
 
+    private static final long serialVersionUID = 1L;
+    public static final int WIDTH = 320;
+    public static final int HEIGHT = WIDTH / 12 * 9;
+    public static final int SCALE = 2;
+    public final String TITLE = "";
+
     public void init() {
-        frmHaley = new JFrame();
-        frmHaley.setBounds(100, 100, 701, 700);
-        frmHaley.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frmHaley.getContentPane().setLayout(null);
-        frmHaley.setLocationRelativeTo(null);
+
+        Interface ui = new Interface();
+
+//        ui.setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
+//        ui.setMaximumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
+//        ui.setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
+
+        JFrame frame = new JFrame(ui.TITLE);
+//        frame.add(ui);
+        frame.pack();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+
+        frame.setBounds(100, 100, 701, 700);
+        frame.getContentPane().setLayout(null);
 
         tf_response = new JTextField();
         tf_response.addKeyListener(new KeyAdapter() {
@@ -38,27 +55,27 @@ public class Interface {
 
         });
         tf_response.setBounds(31, 513, 375, 31);
-        frmHaley.getContentPane().add(tf_response);
+        frame.getContentPane().add(tf_response);
         tf_response.setColumns(10);
 
         ta_convo = new TextArea();
         ta_convo.setEditable(false);
         ta_convo.setBounds(31, 376, 375, 126);
-        frmHaley.getContentPane().add(ta_convo);
+        frame.getContentPane().add(ta_convo);
 
         lbl_screen = new JLabel("");
         lbl_screen.setBounds(31, 24, 339, 339);
-        frmHaley.getContentPane().add(lbl_screen);
+        frame.getContentPane().add(lbl_screen);
 
         JLabel lbl_background = new JLabel("");
         lbl_background.setIcon(new ImageIcon(Main.class.getResource("/pics/Haley" + ".jpg")));
         lbl_background.setBounds(-17, 11, 775, 661);
-        frmHaley.getContentPane().add(lbl_background);
+        frame.getContentPane().add(lbl_background);
 
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    frmHaley.setVisible(true);
+                    frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
