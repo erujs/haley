@@ -11,14 +11,13 @@ import java.awt.event.KeyEvent;
 public class Interface {
 
     public JTextField tf_response;
-    public JLabel lbl_screen;
-    public TextArea ta_convo;
-    private static Algo r;
+    public JLabel lhpic;
+    public TextArea convohist;
 
     private static final long serialVersionUID = 1L;
-    public static final int WIDTH = 320;
-    public static final int HEIGHT = WIDTH / 12 * 9;
-    public static final int SCALE = 2;
+//    public static final int WIDTH = 320;
+//    public static final int HEIGHT = WIDTH / 12 * 9;
+//    public static final int SCALE = 2;
     public final String TITLE = "";
 
     public void init() {
@@ -41,13 +40,12 @@ public class Interface {
 
         tf_response = new JTextField();
         tf_response.addKeyListener(new KeyAdapter() {
-            @Override
             public void keyPressed(KeyEvent arg0) {
                 if(arg0.getKeyCode()==KeyEvent.VK_ENTER){
                     String response = tf_response.getText();
                     tf_response.setText("");
-                    ta_convo.append("You: "+response+"\n");
-                    r = new Algo();
+                    convohist.append("You: "+response+"\n");
+                    Algo r = new Algo();
                     r.reply(response);
                 }
             }
@@ -55,17 +53,20 @@ public class Interface {
         });
         tf_response.setBounds(31, 513, 375, 31);
         frame.getContentPane().add(tf_response);
-        tf_response.setColumns(10);
+//        tf_response.setColumns(10);
 
-        ta_convo = new TextArea(null);
-        ta_convo.setEditable(false);
-        ta_convo.setBounds(31, 376, 375, 126);
-        frame.getContentPane().add(ta_convo);
+        //  Conversation History
+        convohist = new TextArea(null);
+        convohist.setEditable(false);
+        convohist.setBounds(31, 376, 375, 126);
+        frame.getContentPane().add(convohist);
 
-        lbl_screen = new JLabel("");
-        lbl_screen.setBounds(31, 24, 339, 339);
-        frame.getContentPane().add(lbl_screen);
+        //  Return Life Hack Picture
+        lhpic = new JLabel();
+        lhpic.setBounds(31, 24, 339, 339);
+        frame.getContentPane().add(lhpic);
 
+        //  Set Background Picture
         JLabel bg = new JLabel();
         bg.setIcon(new ImageIcon(Main.class.getResource("/pics/Haley" + ".jpg")));
         frame.getContentPane().add(bg);
