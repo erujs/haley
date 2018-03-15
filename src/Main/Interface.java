@@ -37,8 +37,7 @@ public class Interface {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
-        frame.setBounds(100, 100, 701, 700);
-        frame.getContentPane().setLayout(null);
+        frame.setBounds(100, 100, 700, 702);
 
         tf_response = new JTextField();
         tf_response.addKeyListener(new KeyAdapter() {
@@ -58,7 +57,7 @@ public class Interface {
         frame.getContentPane().add(tf_response);
         tf_response.setColumns(10);
 
-        ta_convo = new TextArea();
+        ta_convo = new TextArea(null);
         ta_convo.setEditable(false);
         ta_convo.setBounds(31, 376, 375, 126);
         frame.getContentPane().add(ta_convo);
@@ -67,10 +66,9 @@ public class Interface {
         lbl_screen.setBounds(31, 24, 339, 339);
         frame.getContentPane().add(lbl_screen);
 
-        JLabel lbl_background = new JLabel("");
-        lbl_background.setIcon(new ImageIcon(Main.class.getResource("/pics/Haley" + ".jpg")));
-        lbl_background.setBounds(-17, 11, 775, 661);
-        frame.getContentPane().add(lbl_background);
+        JLabel bg = new JLabel();
+        bg.setIcon(new ImageIcon(Main.class.getResource("/pics/Haley" + ".jpg")));
+        frame.getContentPane().add(bg);
 
         EventQueue.invokeLater(new Runnable() {
             public void run() {
