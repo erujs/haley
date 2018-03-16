@@ -18,17 +18,15 @@ public class Interface {
 //    public static final int WIDTH = 320;
 //    public static final int HEIGHT = WIDTH / 12 * 9;
 //    public static final int SCALE = 2;
-    public final String TITLE = "";
+    public JFrame frame;
 
     public void init() {
-
-        Interface ui = new Interface();
 
 //        ui.setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 //        ui.setMaximumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 //        ui.setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 
-        JFrame frame = new JFrame(ui.TITLE);
+        JFrame frame = new JFrame("");
 //        frame.add(ui);
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -41,22 +39,25 @@ public class Interface {
         tf_response = new JTextField();
         tf_response.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent arg0) {
-                if(arg0.getKeyCode()==KeyEvent.VK_ENTER){
+                if(arg0.getKeyCode()==KeyEvent.VK_ENTER) {
                     String response = tf_response.getText();
                     tf_response.setText("");
-                    convohist.append("You: "+response+"\n");
+                    convohist.append("You: " + response + "\n");
                     Algo r = new Algo();
-                    r.reply(response);
+                    convohist.append(r.reply(response));
+//                    for (int i = 0; r.img(i) == null; i++){
+//                        lhpic.setIcon(r.img(i));
+//                        i++;
+//                    }
                 }
             }
-
         });
         tf_response.setBounds(31, 513, 375, 31);
         frame.getContentPane().add(tf_response);
-//        tf_response.setColumns(10);
+        tf_response.setColumns(10);
 
         //  Conversation History
-        convohist = new TextArea(null);
+        convohist = new TextArea();
         convohist.setEditable(false);
         convohist.setBounds(31, 376, 375, 126);
         frame.getContentPane().add(convohist);

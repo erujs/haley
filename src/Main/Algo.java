@@ -8,21 +8,32 @@ import java.awt.*;
  */
 public class Algo extends Interface{
 
-    public void reply(String statement) {
+    public int img;
+
+    public String reply(String statement) {
         String haley = statement;
         haley = haley.toLowerCase();
+        String str = new String();
 
         if(haley.contains("tshirt")|| haley.contains("shirt")) {
-                convohist.append("Haley: A lifehack for you ;)\n");
-                ImageIcon img1 = new ImageIcon(Main.class.getResource("/pics/examplePic.jpg"));
-                lhpic.setIcon(img1);
+            str = "Haley: A lifehack for you ;)\n";
+            img = 1;
         } else{
-//            System.out.println("Haley");
-            convohist.append("Haley: I dont know what your talking about\n");
-            ImageIcon img1 = new ImageIcon(Main.class.getResource("/pics/blank.png"));
-            lhpic.setIcon(img1);
-            }
+            str = "Haley: ?\n";
+            img = 0;
+        }
+        return str;
     }
+    public Icon img(int p) {
+
+        if (p == 1) {
+            ImageIcon img1 = new ImageIcon(Main.class.getResource("/pics/examplePic.jpg"));
+            return img1;
+        } else {
+            return null;
+        }
+    }
+
 }
 
     /*public TextArea reply(String say){
