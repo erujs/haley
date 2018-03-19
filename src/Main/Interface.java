@@ -11,8 +11,8 @@ import java.awt.event.KeyEvent;
 public class Interface {
 
     public JTextField tf_response;
-    public JLabel lhpic;
-    public TextArea convohist;
+    public JLabel pic;
+    public TextArea backread;
 
     private static final long serialVersionUID = 1L;
 //    public static final int WIDTH = 320;
@@ -32,7 +32,6 @@ public class Interface {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
 
         frame.setBounds(100, 100, 700, 702);
 
@@ -42,11 +41,11 @@ public class Interface {
                 if(arg0.getKeyCode()==KeyEvent.VK_ENTER) {
                     String response = tf_response.getText();
                     tf_response.setText("");
-                    convohist.append("You: " + response + "\n");
+                    backread.append("You: " + response + "\n");
                     Algo r = new Algo();
-                    convohist.append(r.reply(response));
+                    backread.append(r.reply(response));
 //                    for (int i = 0; r.img(i) == null; i++){
-//                        lhpic.setIcon(r.img(i));
+//                        pic.setIcon(r.img(i));
 //                        i++;
 //                    }
                 }
@@ -57,20 +56,20 @@ public class Interface {
         tf_response.setColumns(10);
 
         //  Conversation History
-        convohist = new TextArea();
-        convohist.setEditable(false);
-        convohist.setBounds(31, 376, 375, 126);
-        frame.getContentPane().add(convohist);
+        backread = new TextArea();
+        backread.setEditable(false);
+        backread.setBounds(31, 376, 375, 126);
+        frame.getContentPane().add(backread);
 
         //  Return Life Hack Picture
-        lhpic = new JLabel();
-        lhpic.setBounds(31, 24, 339, 339);
-        frame.getContentPane().add(lhpic);
+        pic = new JLabel();
+        pic.setBounds(31, 24, 339, 339);
+        frame.getContentPane().add(pic);
 
         //  Set Background Picture
-        JLabel bg = new JLabel();
-        bg.setIcon(new ImageIcon(Main.class.getResource("/pics/Haley" + ".jpg")));
-        frame.getContentPane().add(bg);
+        JLabel bennett = new JLabel();
+        bennett.setIcon(new ImageIcon(Main.class.getResource("/pics/Haley" + ".jpg")));
+        frame.getContentPane().add(bennett);
 
         EventQueue.invokeLater(new Runnable() {
             public void run() {
