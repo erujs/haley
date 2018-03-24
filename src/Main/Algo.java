@@ -23,14 +23,5 @@ public class Algo extends Interface {
             img = 0;
         }
         return str;
-//    public Icon img(int p) {
-//
-//        if (p == 1) {
-//            ImageIcon img1 = new ImageIcon(Main.class.getResource("/pics/examplePic.jpg"));
-//            return img1;
-//        } else {
-//            return null;
-//        }
-//    }
     }
 }
