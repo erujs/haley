@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import static javax.swing.ScrollPaneConstants.*
 
 /**
  * Created by Eru on 4/1/2016.
