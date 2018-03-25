@@ -4,17 +4,18 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import static javax.swing.ScrollPaneConstants.*
 
 /**
  * Created by Eru on 4/1/2016.
  */
 public class Interface {
 
-    public JTextField tf_response;
+    public JTextField message;
     public JLabel pic;
-    public TextArea backread;
+    public TextArea convo;
 
-    private static final long serialVersionUID = 1L;
+//    private static final long serialVersionUID = 1L;
 //    public static final int WIDTH = 320;
 //    public static final int HEIGHT = WIDTH / 12 * 9;
 //    public static final int SCALE = 2;
@@ -35,15 +36,15 @@ public class Interface {
 
         frame.setBounds(100, 100, 700, 702);
 
-        tf_response = new JTextField();
-        tf_response.addKeyListener(new KeyAdapter() {
+        message = new JTextField();
+        message.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent arg0) {
                 if(arg0.getKeyCode()==KeyEvent.VK_ENTER) {
-                    String response = tf_response.getText();
-                    tf_response.setText("");
-                    backread.append("You: " + response + "\n");
+                    String response = message.getText();
+                    message.setText("");
+                    convo.append("You: " + response + "\n");
                     Algo r = new Algo();
-                    backread.append(r.reply(response));
+                    convo.append(r.reply(response));
 //                    for (int i = 0; r.img(i) == null; i++){
 //                        pic.setIcon(r.img(i));
 //                        i++;
@@ -51,17 +52,18 @@ public class Interface {
                 }
             }
         });
-        tf_response.setBounds(31, 513, 375, 31);
-        frame.getContentPane().add(tf_response);
-        tf_response.setColumns(10);
+        message.setBounds(31, 513, 375, 31);
+        frame.getContentPane().add(message);
+        message.setColumns(10);
 
         //  Conversation History
-        backread = new TextArea();
-        backread.setEditable(false);
-        backread.setBounds(31, 376, 375, 126);
-        frame.getContentPane().add(backread);
+        convo = new TextArea();
+        convo.setEditable(false);
+        convo.setBounds(31, 376, 375, 126);
+        convo.setEnabled(false);
+        frame.getContentPane().add(convo);
 
-        //  Return Life Hack Picture
+        //  Set Life Hack Picture
         pic = new JLabel();
         pic.setBounds(31, 24, 339, 339);
         frame.getContentPane().add(pic);
