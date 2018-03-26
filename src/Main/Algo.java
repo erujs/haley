@@ -20,6 +20,8 @@ public class Algo extends Interface {
             img = 0;
         }
         return str;
+
+//    returns image
 //    public Icon img(int p) {
 //
 //        if (p == 1) {
