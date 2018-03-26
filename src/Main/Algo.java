@@ -21,7 +21,7 @@ public class Algo extends Interface {
         }
         return str;
 
-//    returns image
+//    returns life hack image
 //    public Icon img(int p) {
 //
 //        if (p == 1) {
