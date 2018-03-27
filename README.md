@@ -1,2 +1,2 @@
 # Haley
-A 'Life-Hack' Chatbot
+A 'Life-Hack' Chatbot that provides basic life hack with pics
