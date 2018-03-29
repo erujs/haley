@@ -6,7 +6,7 @@ package Main;
 public class Algo extends Interface {
 
     public int img;
-
+//  brute force algorithm
     public String reply(String statement) {
         String haley = statement;
         haley = haley.toLowerCase();
