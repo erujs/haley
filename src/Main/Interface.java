@@ -1,6 +1,7 @@
 package Main;
 
 import javax.swing.*;
+import javax.swing.text.DefaultCaret;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -21,7 +22,8 @@ public class Interface {
     public JFrame frame;
 
     public void init() {
-
+        int horizontalPolicy = JScrollPane.HORIZONTAL_SCROLLBAR_NEVER;
+        int verticalPolicy = JScrollPane.VERTICAL_SCROLLBAR_NEVER;
 //        ui.setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 //        ui.setMaximumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 //        ui.setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
@@ -57,10 +59,16 @@ public class Interface {
 
         //  Conversation History
         convo = new TextArea();
+        JScrollPane scroll = new JScrollPane(convo);
+//        DefaultCaret caret = (DefaultCaret) convo.getCaretPosition();
+//        caret.setUpdatePolicy(DefaultCaret.NEVER_UPDATE);
         convo.setEditable(false);
         convo.setBounds(31, 376, 375, 126);
-        convo.setEnabled(false);
-        frame.getContentPane().add(convo);
+//        convo.setEnabled(false);
+        scroll.setHorizontalScrollBarPolicy(horizontalPolicy);
+        scroll.setVerticalScrollBarPolicy(verticalPolicy);
+        frame.getContentPane().add(scroll);
+//        frame.getContentPane().add(convo);
 
         //  Set Life Hack Picture
         pic = new JLabel();
