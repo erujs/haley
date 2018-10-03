@@ -22,8 +22,6 @@ public class Interface {
     public JFrame frame;
 
     public void init() {
-        int horizontalPolicy = JScrollPane.HORIZONTAL_SCROLLBAR_NEVER;
-        int verticalPolicy = JScrollPane.VERTICAL_SCROLLBAR_NEVER;
 //        ui.setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 //        ui.setMaximumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 //        ui.setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
@@ -58,17 +56,12 @@ public class Interface {
         message.setColumns(10);
 
         //  Conversation History
-        convo = new TextArea();
-        JScrollPane scroll = new JScrollPane(convo);
-//        DefaultCaret caret = (DefaultCaret) convo.getCaretPosition();
-//        caret.setUpdatePolicy(DefaultCaret.NEVER_UPDATE);
+        convo = new TextArea(null, 4 , 99 , TextArea.SCROLLBARS_VERTICAL_ONLY);
+
         convo.setEditable(false);
         convo.setBounds(31, 376, 375, 126);
 //        convo.setEnabled(false);
-        scroll.setHorizontalScrollBarPolicy(horizontalPolicy);
-        scroll.setVerticalScrollBarPolicy(verticalPolicy);
-        frame.getContentPane().add(scroll);
-//        frame.getContentPane().add(convo);
+        frame.getContentPane().add(convo);
 
         //  Set Life Hack Picture
         pic = new JLabel();

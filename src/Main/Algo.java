@@ -8,12 +8,13 @@ public class Algo extends Interface {
     public int img;
 //  brute force algorithm
     public String reply(String statement) {
+        String h = "Haley: ";
         String haley = statement;
         haley = haley.toLowerCase();
         String str = new String();
 
         if (haley.contains("what is lifehack") || haley.contains("definition") || haley.contains("what is life hack") || haley.contains("meaning of life hack") || haley.contains("meaning of lifehack")) {
-            str = "Haley: Lifehacks are strategy or techniques adopted in order to manage one's time and daily activities in a more efficient way. \n";
+            str = h + "Lifehacks are strategy or techniques adopted in order to manage one's time and daily activities in a more efficient way. \n";
             img = 1;
         } else {
             str = "Haley: ?\n";
