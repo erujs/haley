@@ -1,5 +1,9 @@
 package Main;
 
+import java.awt.*;
+
+import static java.awt.Color.ORANGE;
+
 /**
  * Created by Eru on 4/1/2016.
  */
@@ -9,6 +13,7 @@ public class Algo extends Interface {
 //  brute force algorithm
     public String reply(String statement) {
         String h = "Haley: ";
+//        h.setColor(ORANGE);
         String haley = statement;
         haley = haley.toLowerCase();
         String str = new String();
