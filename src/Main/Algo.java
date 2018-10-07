@@ -1,16 +1,14 @@
 package Main;
 
+import javax.swing.*;
 import java.awt.*;
-
-import static java.awt.Color.ORANGE;
 
 /**
  * Created by Eru on 4/1/2016.
  */
 public class Algo extends Interface {
-
     public int img;
-//  brute force algorithm
+    //  brute force algorithm
     public String reply(String statement) {
         String h = "Haley: ";
 //        h.setColor(ORANGE);
@@ -29,16 +27,15 @@ public class Algo extends Interface {
             img = 0;
         }
         return str;
+    }
+    //  returns life hack image
+    public Icon img(String p) {
 
-//    returns life hack image
-//    public Icon img(int p) {
-//
-//        if (p == 1) {
-//            ImageIcon img1 = new ImageIcon(Main.class.getResource("/pics/examplePic.jpg"));
-//            return img1;
-//        } else {
-//            return null;
-//        }
-//    }
+        if (p == "a") {
+            ImageIcon img1 = new ImageIcon(Main.class.getResource("/pics/examplePic.jpg"));
+            return img1;
+        } else {
+            return null;
+        }
     }
 }
