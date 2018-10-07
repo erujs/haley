@@ -1,7 +1,6 @@
 package Main;
 
 import javax.swing.*;
-import javax.swing.text.DefaultCaret;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -35,7 +34,7 @@ public class Interface {
 
         frame.setBounds(100, 100, 700, 702);
 
-        Algo r = new Algo();
+        Algo a = new Algo();
         message = new JTextField();
         message.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent arg0) {
@@ -43,7 +42,7 @@ public class Interface {
                     String response = message.getText();
                     message.setText("");
                     convo.append("You: " + response + "\n");
-                    convo.append(r.reply(response));
+                    convo.append(a.reply(response));
                 }
             }
         });
@@ -60,7 +59,8 @@ public class Interface {
         //  Set Life Hack Picture
         pic = new JLabel();
         pic.setBounds(31, 24, 339, 339);
-        pic.setIcon(r.img(1));
+        Icon img = a.getImg();
+        pic.setIcon(img);
         frame.getContentPane().add(pic);
 
         //  Set Background Picture

@@ -6,12 +6,15 @@ import javax.swing.*;
  * Created by Eru on 4/1/2016.
  */
 public class Algo extends Interface {
+
+    public ImageIcon img;
+
     //  brute force algorithm
     public String reply(String statement) {
         String h = "Haley: ";
         String haley = statement;
         haley = haley.toLowerCase();
-        String str = new String();
+        String str;
 
         if (haley.contains("lifehack") || haley.contains("life hack")) {
             str = h + "Lifehacks are strategy or techniques adopted in order to manage one's time and daily activities in a more efficient way. \n";
@@ -24,13 +27,13 @@ public class Algo extends Interface {
     }
 
     //  returns life hack image
-    public Icon img(int p) {
-
+    Icon img(int p) {
         if (p == 1) {
-            ImageIcon img1 = new ImageIcon(Main.class.getResource("/pics/examplePic.jpg"));
-            return img1;
-        } else {
-            return null;
+            this.img = new ImageIcon(Main.class.getResource("/pics/examplePic.jpg"));
         }
+        return null;
+    }
+    public Icon getImg(){
+        return this.img;
     }
 }
