@@ -35,6 +35,7 @@ public class Interface {
 
         frame.setBounds(100, 100, 700, 702);
 
+        Algo r = new Algo();
         message = new JTextField();
         message.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent arg0) {
@@ -42,12 +43,7 @@ public class Interface {
                     String response = message.getText();
                     message.setText("");
                     convo.append("You: " + response + "\n");
-                    Algo r = new Algo();
                     convo.append(r.reply(response));
-//                    for (int i = 0; r.img(i) == null; i++){
-//                        pic.setIcon(r.img(i));
-//                        i++;
-//                    }
                 }
             }
         });
@@ -56,16 +52,15 @@ public class Interface {
         message.setColumns(10);
 
         //  Conversation History
-        convo = new TextArea(null, 4 , 99 , TextArea.SCROLLBARS_VERTICAL_ONLY);
-
+        convo = new TextArea(null, 4 , 99 , TextArea.SCROLLBARS_NONE);
         convo.setEditable(false);
         convo.setBounds(31, 376, 375, 126);
-//        convo.setEnabled(false);
         frame.getContentPane().add(convo);
 
         //  Set Life Hack Picture
         pic = new JLabel();
         pic.setBounds(31, 24, 339, 339);
+        pic.setIcon(r.img(1));
         frame.getContentPane().add(pic);
 
         //  Set Background Picture
