@@ -36,11 +36,11 @@ public class Interface {
 
         Algo a = new Algo();
         message = new JTextField();
+//        message.setText("");
         message.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent arg0) {
                 if(arg0.getKeyCode()==KeyEvent.VK_ENTER) {
                     String response = message.getText();
-                    message.setText("");
                     convo.append("You: " + response + "\n");
                     convo.append(a.reply(response));
                 }
@@ -51,7 +51,7 @@ public class Interface {
         message.setColumns(10);
 
         //  Conversation History
-        convo = new TextArea(null, 4 , 99 , TextArea.SCROLLBARS_NONE);
+        convo = new TextArea("Haley: Hello World!\n", 4 , 99 , TextArea.SCROLLBARS_NONE);
         convo.setEditable(false);
         convo.setBounds(31, 376, 375, 126);
         frame.getContentPane().add(convo);

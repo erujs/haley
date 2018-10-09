@@ -12,6 +12,7 @@ public class Algo extends Interface {
     //  brute force algorithm
     public String reply(String statement) {
         String h = "Haley: ";
+//        String HD = "Good Day Master!";
         String haley = statement;
         haley = haley.toLowerCase();
         String str;
