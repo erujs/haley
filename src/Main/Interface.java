@@ -36,7 +36,6 @@ public class Interface {
 
         Algo a = new Algo();
         message = new JTextField();
-//        message.setText("");
         message.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent arg0) {
                 if(arg0.getKeyCode()==KeyEvent.VK_ENTER) {
@@ -52,6 +51,7 @@ public class Interface {
 
         //  Conversation History
         convo = new TextArea("Haley: Hello World!\n", 4 , 99 , TextArea.SCROLLBARS_NONE);
+        convo.setFocusable(false);
         convo.setEditable(false);
         convo.setBounds(31, 376, 375, 126);
         frame.getContentPane().add(convo);

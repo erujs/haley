@@ -17,7 +17,7 @@ public class Algo extends Interface {
         String str;
 
         if (haley.contains("lifehack") || haley.contains("life hack")) {
-            str = h + "Lifehacks are strategy or techniques adopted in order to manage one's time and daily activities in a more efficient way. \n";
+            str = h + "Lifehacks are strategy or techniques adopted in order to manage one's time and daily activities in a more efficient way.\n";
             img(1);
         } else {
             str = h + "?\n";
@@ -27,12 +27,14 @@ public class Algo extends Interface {
     }
 
     //  returns life hack image
-    Icon img(int p) {
+    public Icon img(int p) {
         if (p == 1) {
-            this.img = new ImageIcon(Main.class.getResource("/pics/examplePic.jpg"));
+            img = new ImageIcon(Main.class.getResource("/pics/examplePic.jpg"));
+            return img;
         }
         return null;
     }
+
     public Icon getImg(){
         return this.img;
     }
