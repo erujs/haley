@@ -7,7 +7,7 @@ import javax.swing.*;
  */
 public class Algo extends Interface {
 
-    public ImageIcon img;
+//    public ImageIcon pic;
 
     //  brute force algorithm
     public String reply(String statement) {
@@ -28,14 +28,10 @@ public class Algo extends Interface {
 
     //  returns life hack image
     public Icon img(int p) {
+        Icon pic = null;
         if (p == 1) {
-            img = new ImageIcon(Main.class.getResource("/pics/examplePic.jpg"));
-            return img;
+            pic = new ImageIcon(Main.class.getResource("/pics/1.jpg"));
         }
-        return null;
-    }
-
-    public Icon getImg(){
-        return this.img;
+        return pic;
     }
 }

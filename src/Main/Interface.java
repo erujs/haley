@@ -59,7 +59,7 @@ public class Interface {
         //  Set Life Hack Picture
         pic = new JLabel();
         pic.setBounds(31, 24, 339, 339);
-        Icon img = a.getImg();
+        Icon img = a.img(1);
         pic.setIcon(img);
         frame.getContentPane().add(pic);
 
