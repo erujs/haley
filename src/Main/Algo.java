@@ -7,8 +7,6 @@ import javax.swing.*;
  */
 public class Algo extends Interface {
 
-//    public ImageIcon pic;
-
     //  brute force algorithm
     public String reply(String statement) {
         String h = "Haley: ";
